@@ -2,6 +2,8 @@
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="Out_dt_TitleDeedReport" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_ProcedureNumberColumnIndex" Type="OutArgument(x:String)" />
+    <x:Property Name="out_CaseStatusColumnIndex" Type="OutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -95,9 +97,11 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="450,942" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1913,928" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -118,6 +122,8 @@
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="sf_ReadReport - Invoke Workflow File (DeveloperFramework\Salesforce\sf_ReadReport.xaml)" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="DeveloperFramework\Salesforce\sf_ReadReport.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_ReportXlsx">[Out_dt_TitleDeedReport]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_CaseStatusColumnIndex">[out_CaseStatusColumnIndex]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_ProcedureNumberColumnIndex">[out_ProcedureNumberColumnIndex]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="dld_2.0 - Invoke Workflow File (DeveloperFramework\DLD_2.0\dld_2.0.xaml)" sap:VirtualizedContainerService.HintSize="450,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="DeveloperFramework\DLD_2.0\dld_2.0.xaml">
