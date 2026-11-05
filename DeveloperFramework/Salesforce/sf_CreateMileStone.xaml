@@ -107,35 +107,36 @@
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="sf_CreateMileStone" sap:VirtualizedContainerService.HintSize="1412,3569" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="sf_CreateMileStone" sap:VirtualizedContainerService.HintSize="1412,5281" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Sequence-Create Milestone" sap:VirtualizedContainerService.HintSize="650,3546" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence DisplayName="Sequence-Create Milestone" sap:VirtualizedContainerService.HintSize="650,5258" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch-Create Milestone" sap:VirtualizedContainerService.HintSize="616,3463" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch-Create Milestone" sap:VirtualizedContainerService.HintSize="616,5175" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
-          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="522,2957" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="522,4669" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Salesforce Home" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,2897" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e8217dc9-16a3-4eac-a4c5-90b2c2382fa7" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Salesforce Home" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,4609" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="e8217dc9-16a3-4eac-a4c5-90b2c2382fa7" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,2702" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,4414" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -164,13 +165,13 @@
                         <uix:TargetAnchorable BrowserURL="nshama.my.salesforce.com/006VH00000rFvqfYAC" ContentHash="drs0LYiiwUalpceM3RhifA" DesignTimeRectangle="731, 381, 95, 18" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='INPUT' aaname='Create Milestone' type='button' /&gt;" Guid="7ba938d2-aa41-41e9-85c4-6d6c9b615449" InformativeScreenshot="1102d2f47aeb9968d2a545c7ccc98f14.jpg" IsResponsive="True" Reference="8BpuFSLbfU-l7uzrMDPDhA/rANKwqckTE6mykg89KHeVw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Salesforce*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Edge Salesforce-Create Milestone" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,2133" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Version="V2">
+                    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Edge Salesforce-Create Milestone" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,3845" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.Never]" ScopeGuid="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Version="V2">
                       <uix:NApplicationCard.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1938" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,3650" sap2010:WorkflowViewState.IdRef="Sequence_8">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -346,162 +347,140 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </uix:NClick>
-                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                              <ui:CommentOut.Body>
-                                <Sequence DisplayName="Ignored activities" sap:VirtualizedContainerService.HintSize="650,1664" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <uix:NSelectItem DisplayName="Select Item 'Milestone'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,246" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="Title Deed Status" ScopeIdentifier="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Version="V5">
-                                    <uix:NSelectItem.Items>
-                                      <scg:List x:TypeArguments="x:String" Capacity="35">
-                                        <x:String>--None--</x:String>
-                                        <x:String>SA Color Selection</x:String>
-                                        <x:String>SA Contract Status</x:String>
-                                        <x:String>Initial Registration</x:String>
-                                        <x:String>PTD NOC Letter</x:String>
-                                        <x:String>Email Control</x:String>
-                                        <x:String>Handover</x:String>
-                                        <x:String>Title Deed Status</x:String>
-                                        <x:String>Installment 10</x:String>
-                                        <x:String>Installment 8</x:String>
-                                        <x:String>Installment 4</x:String>
-                                        <x:String>Installment 6</x:String>
-                                        <x:String>Installment 7</x:String>
-                                        <x:String>Installment 5</x:String>
-                                        <x:String>Installment 2</x:String>
-                                        <x:String>Installment 3</x:String>
-                                        <x:String>Installment 9</x:String>
-                                        <x:String>Installment 1</x:String>
-                                        <x:String>Security Deposit</x:String>
-                                        <x:String>Customer Care</x:String>
-                                        <x:String>Audit Milestone</x:String>
-                                        <x:String>DLD Termination</x:String>
-                                        <x:String>Legal</x:String>
-                                        <x:String>Noqodi Transactions</x:String>
-                                        <x:String>DSR Confirmations</x:String>
-                                        <x:String>Handover Previous Process</x:String>
-                                        <x:String>Community Violation</x:String>
-                                        <x:String>SPA Addendum Status</x:String>
-                                        <x:String>Miscellaneous</x:String>
-                                        <x:String>PP Change</x:String>
-                                        <x:String>Mortgage Request</x:String>
-                                        <x:String>Court Termination</x:String>
-                                        <x:String>DLD Settlement</x:String>
-                                        <x:String>Retail Parking Fees</x:String>
-                                        <x:String>NCM Legal</x:String>
-                                      </scg:List>
-                                    </uix:NSelectItem.Items>
-                                    <uix:NSelectItem.Target>
-                                      <uix:TargetAnchorable BrowserURL="nshama--c.vf.force.com/apex/CreateMilestone" ContentHash="l_l3HiAA6UGBv8wxuKUEFA" DesignTimeRectangle="387, 490, 200, 19" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzyAccuracy="0.9" FuzzySelectorArgument="&lt;webctrl tag='SELECT' aaname='Milestone' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="3df55271-221c-4787-a293-d7112ec17934" InformativeScreenshot="7cc20905423a61546c62416064abaab7.jpg" IsResponsive="True" Reference="8BpuFSLbfU-l7uzrMDPDhA/YY0J1GvkrU-gqa258l6E6g" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Salesforce - Unlimited Edition*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Complete">
-                                        <uix:TargetAnchorable.Anchors>
-                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                            <uix:Target DesignTimeRectangle="317, 490, 50, 12" ElementType="Text" FuzzyAccuracy="0.9" FuzzySelectorArgument="&lt;webctrl tag='LABEL' aaname='Milestone' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Milestone' /&gt;" Guid="fb550ba5-c815-4f1a-8582-1c29c68381cf" SearchSteps="FuzzySelector" />
-                                          </scg:List>
-                                        </uix:TargetAnchorable.Anchors>
-                                      </uix:TargetAnchorable>
-                                    </uix:NSelectItem.Target>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </uix:NSelectItem>
-                                  <uix:NSelectItem DisplayName="Select Item 'Status'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,246" sap2010:WorkflowViewState.IdRef="NSelectItem_4" Item="Title Deed Application Received" ScopeIdentifier="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Version="V5">
-                                    <uix:NSelectItem.Items>
-                                      <scg:List x:TypeArguments="x:String" Capacity="26">
-                                        <x:String>--None--</x:String>
-                                        <x:String>Cost Sheet Submitted To Process Payment</x:String>
-                                        <x:String>DSR Submitted To DLD</x:String>
-                                        <x:String>Pre Title Deed Completed</x:String>
-                                        <x:String>Pre Title Deed Registered</x:String>
-                                        <x:String>Pre Title Deed Requested</x:String>
-                                        <x:String>Rejected by DLD</x:String>
-                                        <x:String>Resubmitted to DLD</x:String>
-                                        <x:String>Title Deed Application Received</x:String>
-                                        <x:String>Title Deed Application Registered</x:String>
-                                        <x:String>Title Deed Issued</x:String>
-                                        <x:String>Title Deed Other - Documents Pending with Bank</x:String>
-                                        <x:String>Title Deed Other - Documents Pending with Customer</x:String>
-                                        <x:String>Title Deed Other - Pending with Other Depts/Issues</x:String>
-                                        <x:String>Title Deed Other-Special Instructions</x:String>
-                                        <x:String>Pre Title Deed Debit Memo Invoiced PHPP</x:String>
-                                        <x:String>Pre Title Deed – DSR Submitted</x:String>
-                                        <x:String>Pre Title Deed Invoice Requested</x:String>
-                                        <x:String>TD Customer Details Verified</x:String>
-                                        <x:String>PTD Customer Details Verified</x:String>
-                                        <x:String>Title Deed Application Registered Draft</x:String>
-                                        <x:String>Pre Title Deed Application Registered Draft</x:String>
-                                        <x:String>Title Deed Other - Pending Customer Details Update to Trustee Office</x:String>
-                                        <x:String>Pre Title Deed Other - Documents Pending with Customer</x:String>
-                                        <x:String>Pre Title Deed Other – Pending Customer Details Update to Trustee Office</x:String>
-                                        <x:String>Title Deed Issued – Pending Customer Participant Update</x:String>
-                                      </scg:List>
-                                    </uix:NSelectItem.Items>
-                                    <uix:NSelectItem.Target>
-                                      <uix:TargetAnchorable BrowserURL="nshama--c.vf.force.com/apex/CreateMilestone" ContentHash="mhwYUBYMwUSX4Z3wazwzeA" DesignTimeRectangle="1310, 490, 300, 19" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzyAccuracy="0.9" FuzzySelectorArgument="&lt;webctrl tag='TABLE' aaname='Milestone Status *Milestone Date Responsibility Comments' /&gt;&lt;webctrl tag='SELECT' aaname='Status' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="d1db93d5-dda4-4683-80d8-29c610577bdf" InformativeScreenshot="f0ff08172130115ec31a559d5b2fdfa6.jpg" IsResponsive="True" Reference="8BpuFSLbfU-l7uzrMDPDhA/DzeH8Bm85kCPG6GKl-zd1g" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Salesforce - Unlimited Edition*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Complete">
-                                        <uix:TargetAnchorable.Anchors>
-                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                            <uix:Target DesignTimeRectangle="1257, 490, 33, 12" ElementType="Text" FuzzyAccuracy="0.9" FuzzySelectorArgument="&lt;webctrl tag='TABLE' aaname='Milestone Status *Milestone Date Responsibility Comments' /&gt;&lt;webctrl aaname='Status' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' tag='LABEL' check:innerText='Status' /&gt;" Guid="d8142bc7-777f-4977-9e5c-ea3dae10a574" SearchSteps="FuzzySelector" />
-                                          </scg:List>
-                                        </uix:TargetAnchorable.Anchors>
-                                      </uix:TargetAnchorable>
-                                    </uix:NSelectItem.Target>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </uix:NSelectItem>
-                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Upload here'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,245" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Version="V5">
-                                    <uix:NClick.Target>
-                                      <uix:TargetAnchorable BrowserURL="nshama.my.salesforce.com/006Hq00001WnvhPIAR" ContentHash="kdRd2FhZOU6Lge68Kfj_KA" DesignTimeRectangle="61, 694, 66, 14" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl role='editable text' text='Upload here' /&gt;" Guid="c020ea9f-3219-4980-bd68-b8e86d46f9c8" InformativeScreenshot="d7027ffc6b5a1cde602a1a82c0b985db.jpg" IsResponsive="True" Reference="8BpuFSLbfU-l7uzrMDPDhA/nD2amMwQWEup5guiiCXtsw" ScopeSelectorArgument="&lt;wnd app='msedge.exe' title='*Salesforce - Unlimited Edition*' /&gt;" SearchSteps="Selector" SelectionStrategy="AA" Version="V6" WaitForReadyArgument="Interactive" />
-                                    </uix:NClick.Target>
-                                  </uix:NClick>
-                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'INPUT uploadForm…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,245" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Version="V5">
-                                    <uix:NClick.Target>
-                                      <uix:TargetAnchorable BrowserURL="nshama--c.vf.force.com/apex/CreateMilestone" ContentHash="t4gqbym_R0C5u_xsiDIEyw" DesignTimeRectangle="784, 347, 253, 21" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl type='file' tag='INPUT' /&gt;" Guid="4c3610ed-db4b-41a7-a7ee-0cc69a36fb93" InformativeScreenshot="f1ca5ccf06af465c3e3049be0e9c2d44.jpg" IsResponsive="True" Reference="8BpuFSLbfU-l7uzrMDPDhA/SsNr7nzI6km-o-F9a6TZUQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Salesforce - Unlimited Edition*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
-                                    </uix:NClick.Target>
-                                  </uix:NClick>
-                                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Edit'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,297" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="HardwareEvents" ScopeIdentifier="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Version="V5">
-                                    <uix:NTypeInto.Target>
-                                      <uix:TargetAnchorable BrowserURL="nshama.my.salesforce.com/006Hq00001WnvhPIAR" ContentHash="EZVTNqY0x0utOocaiY9IIg" DesignTimeRectangle="201, 466, 514, 15" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd aaname='File name:' cls='Edit' /&gt;" Guid="f5ee0555-24e8-428f-8efe-a1d9de26dfc8" InformativeScreenshot="e4083da7fe7be6a30a4df9c852e598a1.jpg" IsResponsive="True" Reference="8BpuFSLbfU-l7uzrMDPDhA/2F9TeyyEVEWKdrYnYVX9OA" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='*' title='Open' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
-                                    </uix:NTypeInto.Target>
-                                    <uix:NTypeInto.Text>
-                                      <InArgument x:TypeArguments="x:String">
-                                        <Literal x:TypeArguments="x:String" Value="" />
-                                      </InArgument>
-                                    </uix:NTypeInto.Text>
-                                  </uix:NTypeInto>
-                                  <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="[UiPath.UIAutomationNext.Enums.CursorMotionType.Smooth]" DisplayName="Click 'Save upload'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,245" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Version="V5">
-                                    <uix:NClick.Target>
-                                      <uix:TargetAnchorable BrowserURL="nshama.my.salesforce.com/006Hq00001WnvhPIAR" ContentHash="fvlhOlUqrEqJbD3qws5_ew" DesignTimeRectangle="1239, 408, 34, 18" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl role='push button' text='Save' /&gt;" Guid="410dec3c-685f-45a6-96e8-7adf84aaa191" InformativeScreenshot="ebc74f86b1d26959b20ba7bf57bf2202.jpg" IsResponsive="True" Reference="8BpuFSLbfU-l7uzrMDPDhA/SyBKGJ4H1UyMM8wal7jkMw" ScopeSelectorArgument="&lt;wnd app='msedge.exe' title='*Salesforce*' /&gt;" SearchSteps="Selector" SelectionStrategy="AA" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]" />
-                                    </uix:NClick.Target>
-                                  </uix:NClick>
-                                  <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="[UiPath.UIAutomationNext.Enums.CursorMotionType.Smooth]" DelayAfter="5" DisplayName="Click 'Generate Milestone'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="616,236" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Version="V5">
-                                    <uix:NClick.Target>
-                                      <uix:TargetAnchorable BrowserURL="nshama--c.vf.force.com/apex/CreateMilestone" ContentHash="q1gnm_3M90uJ_svFWBHjXA" DesignTimeRectangle="888, 267, 108, 18" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' aaname='Generate Milestone' /&gt;" Guid="88ea6404-1c73-4804-9a4d-e599efe22ae9" InformativeScreenshot="6b26b7ae309bed402ead5fd6a0b0675f.jpg" IsResponsive="True" Reference="8BpuFSLbfU-l7uzrMDPDhA/rfmRRtJCxEyJmM_aYbua-Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Salesforce - Unlimited Edition*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
-                                    </uix:NClick.Target>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </uix:NClick>
-                                </Sequence>
-                              </ui:CommentOut.Body>
+                            <uix:NSelectItem DisplayName="Select Item 'Milestone'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="Title Deed Status" ScopeIdentifier="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Version="V5">
+                              <uix:NSelectItem.Items>
+                                <scg:List x:TypeArguments="x:String" Capacity="35">
+                                  <x:String>--None--</x:String>
+                                  <x:String>SA Color Selection</x:String>
+                                  <x:String>SA Contract Status</x:String>
+                                  <x:String>Initial Registration</x:String>
+                                  <x:String>PTD NOC Letter</x:String>
+                                  <x:String>Email Control</x:String>
+                                  <x:String>Handover</x:String>
+                                  <x:String>Title Deed Status</x:String>
+                                  <x:String>Installment 10</x:String>
+                                  <x:String>Installment 8</x:String>
+                                  <x:String>Installment 4</x:String>
+                                  <x:String>Installment 6</x:String>
+                                  <x:String>Installment 7</x:String>
+                                  <x:String>Installment 5</x:String>
+                                  <x:String>Installment 2</x:String>
+                                  <x:String>Installment 3</x:String>
+                                  <x:String>Installment 9</x:String>
+                                  <x:String>Installment 1</x:String>
+                                  <x:String>Security Deposit</x:String>
+                                  <x:String>Customer Care</x:String>
+                                  <x:String>Audit Milestone</x:String>
+                                  <x:String>DLD Termination</x:String>
+                                  <x:String>Legal</x:String>
+                                  <x:String>Noqodi Transactions</x:String>
+                                  <x:String>DSR Confirmations</x:String>
+                                  <x:String>Handover Previous Process</x:String>
+                                  <x:String>Community Violation</x:String>
+                                  <x:String>SPA Addendum Status</x:String>
+                                  <x:String>Miscellaneous</x:String>
+                                  <x:String>PP Change</x:String>
+                                  <x:String>Mortgage Request</x:String>
+                                  <x:String>Court Termination</x:String>
+                                  <x:String>DLD Settlement</x:String>
+                                  <x:String>Retail Parking Fees</x:String>
+                                  <x:String>NCM Legal</x:String>
+                                </scg:List>
+                              </uix:NSelectItem.Items>
+                              <uix:NSelectItem.Target>
+                                <uix:TargetAnchorable BrowserURL="nshama--c.vf.force.com/apex/CreateMilestone" ContentHash="l_l3HiAA6UGBv8wxuKUEFA" DesignTimeRectangle="387, 490, 200, 19" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzyAccuracy="0.9" FuzzySelectorArgument="&lt;webctrl tag='SELECT' aaname='Milestone' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="3df55271-221c-4787-a293-d7112ec17934" InformativeScreenshot="7cc20905423a61546c62416064abaab7.jpg" IsResponsive="True" Reference="8BpuFSLbfU-l7uzrMDPDhA/YY0J1GvkrU-gqa258l6E6g" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Salesforce - Unlimited Edition*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Complete">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="317, 490, 50, 12" ElementType="Text" FuzzyAccuracy="0.9" FuzzySelectorArgument="&lt;webctrl tag='LABEL' aaname='Milestone' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Milestone' /&gt;" Guid="fb550ba5-c815-4f1a-8582-1c29c68381cf" SearchSteps="FuzzySelector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NSelectItem.Target>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                            </ui:CommentOut>
+                            </uix:NSelectItem>
+                            <uix:NSelectItem DisplayName="Select Item 'Status'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NSelectItem_4" Item="Title Deed Application Received" ScopeIdentifier="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Version="V5">
+                              <uix:NSelectItem.Items>
+                                <scg:List x:TypeArguments="x:String" Capacity="26">
+                                  <x:String>--None--</x:String>
+                                  <x:String>Cost Sheet Submitted To Process Payment</x:String>
+                                  <x:String>DSR Submitted To DLD</x:String>
+                                  <x:String>Pre Title Deed Completed</x:String>
+                                  <x:String>Pre Title Deed Registered</x:String>
+                                  <x:String>Pre Title Deed Requested</x:String>
+                                  <x:String>Rejected by DLD</x:String>
+                                  <x:String>Resubmitted to DLD</x:String>
+                                  <x:String>Title Deed Application Received</x:String>
+                                  <x:String>Title Deed Application Registered</x:String>
+                                  <x:String>Title Deed Issued</x:String>
+                                  <x:String>Title Deed Other - Documents Pending with Bank</x:String>
+                                  <x:String>Title Deed Other - Documents Pending with Customer</x:String>
+                                  <x:String>Title Deed Other - Pending with Other Depts/Issues</x:String>
+                                  <x:String>Title Deed Other-Special Instructions</x:String>
+                                  <x:String>Pre Title Deed Debit Memo Invoiced PHPP</x:String>
+                                  <x:String>Pre Title Deed – DSR Submitted</x:String>
+                                  <x:String>Pre Title Deed Invoice Requested</x:String>
+                                  <x:String>TD Customer Details Verified</x:String>
+                                  <x:String>PTD Customer Details Verified</x:String>
+                                  <x:String>Title Deed Application Registered Draft</x:String>
+                                  <x:String>Pre Title Deed Application Registered Draft</x:String>
+                                  <x:String>Title Deed Other - Pending Customer Details Update to Trustee Office</x:String>
+                                  <x:String>Pre Title Deed Other - Documents Pending with Customer</x:String>
+                                  <x:String>Pre Title Deed Other – Pending Customer Details Update to Trustee Office</x:String>
+                                  <x:String>Title Deed Issued – Pending Customer Participant Update</x:String>
+                                </scg:List>
+                              </uix:NSelectItem.Items>
+                              <uix:NSelectItem.Target>
+                                <uix:TargetAnchorable BrowserURL="nshama--c.vf.force.com/apex/CreateMilestone" ContentHash="mhwYUBYMwUSX4Z3wazwzeA" DesignTimeRectangle="1310, 490, 300, 19" ElementType="DropDown" ElementVisibilityArgument="Interactive" FuzzyAccuracy="0.9" FuzzySelectorArgument="&lt;webctrl tag='TABLE' aaname='Milestone Status *Milestone Date Responsibility Comments' /&gt;&lt;webctrl tag='SELECT' aaname='Status' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="d1db93d5-dda4-4683-80d8-29c610577bdf" InformativeScreenshot="f0ff08172130115ec31a559d5b2fdfa6.jpg" IsResponsive="True" Reference="8BpuFSLbfU-l7uzrMDPDhA/DzeH8Bm85kCPG6GKl-zd1g" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Salesforce - Unlimited Edition*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Complete">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="1257, 490, 33, 12" ElementType="Text" FuzzyAccuracy="0.9" FuzzySelectorArgument="&lt;webctrl tag='TABLE' aaname='Milestone Status *Milestone Date Responsibility Comments' /&gt;&lt;webctrl aaname='Status' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' tag='LABEL' check:innerText='Status' /&gt;" Guid="d8142bc7-777f-4977-9e5c-ea3dae10a574" SearchSteps="FuzzySelector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NSelectItem.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NSelectItem>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Upload here'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,245" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Version="V5">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="nshama.my.salesforce.com/006Hq00001WnvhPIAR" ContentHash="kdRd2FhZOU6Lge68Kfj_KA" DesignTimeRectangle="61, 694, 66, 14" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl role='editable text' text='Upload here' /&gt;" Guid="c020ea9f-3219-4980-bd68-b8e86d46f9c8" InformativeScreenshot="d7027ffc6b5a1cde602a1a82c0b985db.jpg" IsResponsive="True" Reference="8BpuFSLbfU-l7uzrMDPDhA/nD2amMwQWEup5guiiCXtsw" ScopeSelectorArgument="&lt;wnd app='msedge.exe' title='*Salesforce - Unlimited Edition*' /&gt;" SearchSteps="Selector" SelectionStrategy="AA" Version="V6" WaitForReadyArgument="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'INPUT uploadForm…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,245" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Version="V5">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="nshama--c.vf.force.com/apex/CreateMilestone" ContentHash="t4gqbym_R0C5u_xsiDIEyw" DesignTimeRectangle="784, 347, 253, 21" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl type='file' tag='INPUT' /&gt;" Guid="4c3610ed-db4b-41a7-a7ee-0cc69a36fb93" InformativeScreenshot="f1ca5ccf06af465c3e3049be0e9c2d44.jpg" IsResponsive="True" Reference="8BpuFSLbfU-l7uzrMDPDhA/SsNr7nzI6km-o-F9a6TZUQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Salesforce - Unlimited Edition*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Edit'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,297" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="HardwareEvents" ScopeIdentifier="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Text="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Sales_OPS\Title Deed\Output\&quot;+Date.Now.ToString(&quot;yyyy&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;MMM&quot;)+&quot;\&quot;+Date.Now.ToString(&quot;dd-MMM-yyyy&quot;)+&quot;\&quot;+&quot;Title-Deed_&quot;+in_TransactionItem(&quot;Unit No.&quot;).ToString+&quot;.pdf&quot;]" Version="V5">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable BrowserURL="nshama.my.salesforce.com/006Hq00001WnvhPIAR" ContentHash="EZVTNqY0x0utOocaiY9IIg" DesignTimeRectangle="201, 466, 514, 15" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;wnd aaname='File name:' cls='Edit' /&gt;" Guid="f5ee0555-24e8-428f-8efe-a1d9de26dfc8" InformativeScreenshot="e4083da7fe7be6a30a4df9c852e598a1.jpg" IsResponsive="True" Reference="8BpuFSLbfU-l7uzrMDPDhA/2F9TeyyEVEWKdrYnYVX9OA" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='*' title='Open' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                              </uix:NTypeInto.Target>
+                            </uix:NTypeInto>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="[UiPath.UIAutomationNext.Enums.CursorMotionType.Smooth]" DisplayName="Click 'Save upload'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,245" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Version="V5">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="nshama.my.salesforce.com/006Hq00001WnvhPIAR" ContentHash="fvlhOlUqrEqJbD3qws5_ew" DesignTimeRectangle="1239, 408, 34, 18" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;ctrl role='push button' text='Save' /&gt;" Guid="410dec3c-685f-45a6-96e8-7adf84aaa191" InformativeScreenshot="ebc74f86b1d26959b20ba7bf57bf2202.jpg" IsResponsive="True" Reference="8BpuFSLbfU-l7uzrMDPDhA/SyBKGJ4H1UyMM8wal7jkMw" ScopeSelectorArgument="&lt;wnd app='msedge.exe' title='*Salesforce*' /&gt;" SearchSteps="Selector" SelectionStrategy="AA" Version="V6" WaitForReadyArgument="[UiPath.UIAutomationNext.Enums.NWaitForReady.Complete]" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" CursorMotionType="[UiPath.UIAutomationNext.Enums.CursorMotionType.Smooth]" DelayAfter="5" DisplayName="Click 'Generate Milestone'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,245" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Version="V5">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="nshama--c.vf.force.com/apex/CreateMilestone" ContentHash="q1gnm_3M90uJ_svFWBHjXA" DesignTimeRectangle="888, 267, 108, 18" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' aaname='Generate Milestone' /&gt;" Guid="88ea6404-1c73-4804-9a4d-e599efe22ae9" InformativeScreenshot="6b26b7ae309bed402ead5fd6a0b0675f.jpg" IsResponsive="True" Reference="8BpuFSLbfU-l7uzrMDPDhA/rfmRRtJCxEyJmM_aYbua-Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Salesforce - Unlimited Edition*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Complete" />
+                              </uix:NClick.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NClick>
                             <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,299" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="6e3ea2f2-9efe-4702-a045-055e46a5ba75" Shortcuts="[d(hk)][d(ctrl)]w[u(ctrl)][u(hk)]" Version="V5" />
                           </Sequence>
                         </ActivityAction>
