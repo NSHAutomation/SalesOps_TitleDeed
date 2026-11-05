@@ -125,7 +125,7 @@
       <AssemblyReference>UiPath.BusinessRules.Client</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1913,3950" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1412,4523" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_TitleDeedReport" />
       <Variable x:TypeArguments="x:String" Name="jointOwnerDateOfBirth" />
@@ -135,6 +135,9 @@
       <Variable x:TypeArguments="sd:DataTable" Name="dt_JointOwner" />
       <Variable x:TypeArguments="x:Boolean" Name="is_ProcessSubmitted" />
       <Variable x:TypeArguments="x:String" Name="procedureNumber" />
+      <Variable x:TypeArguments="x:String" Name="projectName" />
+      <Variable x:TypeArguments="x:Boolean" Name="is_TitleDeedGenerated" />
+      <Variable x:TypeArguments="x:String" Name="buildingName" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -142,18 +145,18 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="560,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="560,89" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <TryCatch DisplayName="Try Catch-Process" sap:VirtualizedContainerService.HintSize="560,3586" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="596,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="596,89" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <TryCatch DisplayName="Try Catch-Process" sap:VirtualizedContainerService.HintSize="596,4159" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="558,2966" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="594,3539" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_TitleDeedReport]" DisplayName="Read Range Workbook-Report" sap:VirtualizedContainerService.HintSize="524,227" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Sales_OPS\Title Deed\Input\&quot;+Date.Now.Year.ToString+&quot;\&quot;+Date.Now.ToString(&quot;MMMM&quot;)+&quot;\Report_TitleDeed_&quot;+Date.Now.ToString(&quot;dd-MMM-yyyy&quot;)+&quot;.xlsx&quot;]" />
-          <Assign DisplayName="Assign-Check is case already processed or not" sap:VirtualizedContainerService.HintSize="524,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_TitleDeedReport]" DisplayName="Read Range Workbook-Report" sap:VirtualizedContainerService.HintSize="560,227" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Sales_OPS\Title Deed\Input\&quot;+Date.Now.Year.ToString+&quot;\&quot;+Date.Now.ToString(&quot;MMMM&quot;)+&quot;\Report_TitleDeed_&quot;+Date.Now.ToString(&quot;dd-MMM-yyyy&quot;)+&quot;.xlsx&quot;]" />
+          <Assign DisplayName="Assign-Check is case already processed or not" sap:VirtualizedContainerService.HintSize="560,175" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_Is_CaseProcessed]</OutArgument>
             </Assign.To>
@@ -164,37 +167,38 @@
  r("Case Status").ToString.Trim.Equals("More Than 1 Joint Owner".Trim, StringComparison.OrdinalIgnoreCase) OrElse
  r("Case Status").ToString.Trim.Equals("Unable to select unit in DLD 2.0".Trim, StringComparison.OrdinalIgnoreCase) OrElse
  r("Case Status").ToString.Trim.Equals("Failed To Submit Application".Trim, StringComparison.OrdinalIgnoreCase) OrElse
- r("Case Status").ToString.Trim.StartsWith("Owner Details Not Matching".Trim, StringComparison.OrdinalIgnoreCase))]</InArgument>
+ r("Case Status").ToString.Trim.StartsWith("Owner Details Not Matching".Trim, StringComparison.OrdinalIgnoreCase) OrElse
+ r("Case Status").ToString.Trim.StartsWith("Title Deed Report Not Generated".Trim, StringComparison.OrdinalIgnoreCase))]</InArgument>
             </Assign.Value>
           </Assign>
-          <If Condition="[out_Is_CaseProcessed]" DisplayName="If-Validate Case is processed or not " sap:VirtualizedContainerService.HintSize="524,2504" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[out_Is_CaseProcessed]" DisplayName="If-Validate Case is processed or not " sap:VirtualizedContainerService.HintSize="560,3077" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="522,226" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="558,226" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[in_TransactionItem(&quot;Case Number&quot;).ToString+&quot; Case Already Processed&quot;]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="524,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[in_TransactionItem(&quot;Case Number&quot;).ToString+&quot; Case Already Processed&quot;]" />
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="522,2116" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="558,2689" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If Condition="[Cint(in_TransactionItem(&quot;PCC Generated&quot;))=1]" DisplayName="If-Validate If PCC is generated or not" sap:VirtualizedContainerService.HintSize="488,2056" sap2010:WorkflowViewState.IdRef="If_2">
+                <If Condition="[Cint(in_TransactionItem(&quot;PCC Generated&quot;))=1]" DisplayName="If-Validate If PCC is generated or not" sap:VirtualizedContainerService.HintSize="524,2629" sap2010:WorkflowViewState.IdRef="If_2">
                   <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,1441" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="522,2014" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="sf_OpportunityId - Invoke Workflow File (DeveloperFramework\Salesforce\sf_OpportunityId.xaml)" sap:VirtualizedContainerService.HintSize="452,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="DeveloperFramework\Salesforce\sf_OpportunityId.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="sf_OpportunityId - Invoke Workflow File (DeveloperFramework\Salesforce\sf_OpportunityId.xaml)" sap:VirtualizedContainerService.HintSize="488,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="DeveloperFramework\Salesforce\sf_OpportunityId.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
                           <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_Dt_JointOwner">[dt_JointOwner]</OutArgument>
@@ -212,11 +216,13 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:InvokeWorkflowFile>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="dld_2.0_SelectUnitORVilla - Invoke Workflow File (DeveloperFramework\DLD_2.0\dld_2.0_SelectUnitORVilla.xaml)" sap:VirtualizedContainerService.HintSize="452,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="DeveloperFramework\DLD_2.0\dld_2.0_SelectUnitORVilla.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="dld_2.0_SelectUnitORVilla - Invoke Workflow File (DeveloperFramework\DLD_2.0\dld_2.0_SelectUnitORVilla.xaml)" sap:VirtualizedContainerService.HintSize="488,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="DeveloperFramework\DLD_2.0\dld_2.0_SelectUnitORVilla.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
                           <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">[in_TransactionNumber]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_CaseStatusColumnIndex">[in_CaseStatusColumnIndex]</InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_matchedProjectName">[projectName]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_matchedBuildingName">[buildingName]</OutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -225,7 +231,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:InvokeWorkflowFile>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="dld_2.0_RequestFee - Invoke Workflow File (DeveloperFramework\DLD_2.0\dld_2.0_RequestFee.xaml)" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="DeveloperFramework\DLD_2.0\dld_2.0_RequestFee.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="dld_2.0_RequestFee - Invoke Workflow File (DeveloperFramework\DLD_2.0\dld_2.0_RequestFee.xaml)" sap:VirtualizedContainerService.HintSize="488,57" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="DeveloperFramework\DLD_2.0\dld_2.0_RequestFee.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <scg:Dictionary x:TypeArguments="x:String, Argument" />
                         </ui:InvokeWorkflowFile.Arguments>
@@ -236,7 +242,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:InvokeWorkflowFile>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="dld_2.0_FinalPayment - Invoke Workflow File (DeveloperFramework\DLD_2.0\dld_2.0_FinalPayment.xaml)" sap:VirtualizedContainerService.HintSize="452,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="DeveloperFramework\DLD_2.0\dld_2.0_FinalPayment.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="dld_2.0_FinalPayment - Invoke Workflow File (DeveloperFramework\DLD_2.0\dld_2.0_FinalPayment.xaml)" sap:VirtualizedContainerService.HintSize="488,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="DeveloperFramework\DLD_2.0\dld_2.0_FinalPayment.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="x:Boolean" x:Key="in_is_JointOwnerFound">[is_JointOwnerFound]</InArgument>
                           <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_JointOwner">[dt_JointOwner]</InArgument>
@@ -257,52 +263,84 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:InvokeWorkflowFile>
-                      <If Condition="[is_ProcessSubmitted]" DisplayName="If-Validate Is Process Submitted" sap:VirtualizedContainerService.HintSize="452,793" sap2010:WorkflowViewState.IdRef="If_3">
+                      <If Condition="[is_ProcessSubmitted]" DisplayName="If-Validate Is Process Submitted" sap:VirtualizedContainerService.HintSize="488,1366" sap2010:WorkflowViewState.IdRef="If_3">
                         <If.Then>
-                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,405" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,978" sap2010:WorkflowViewState.IdRef="Sequence_6">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="sf_CreateMileStone - Invoke Workflow File (DeveloperFramework\Salesforce\sf_CreateMileStone.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="DeveloperFramework\Salesforce\sf_CreateMileStone.xaml">
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="dld_2.0_ProcedureHistory - Invoke Workflow File (DeveloperFramework\DLD_2.0\dld_2.0_ProcedureHistory.xaml)" sap:VirtualizedContainerService.HintSize="452,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="DeveloperFramework\DLD_2.0\dld_2.0_ProcedureHistory.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_ProcedureNumber">[procedureNumber]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_ProjectName">[projectName]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_BuildingName">[buildingName]</InArgument>
                                 <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
+                                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_is_TitleDeedGenerated">[is_TitleDeedGenerated]</OutArgument>
+                                <InArgument x:TypeArguments="x:Int32" x:Key="in_TransactionNumber">[in_TransactionNumber]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_CaseStatusColumnIndex">[in_CaseStatusColumnIndex]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="sf_CloseCase - Invoke Workflow File (DeveloperFramework\Salesforce\sf_CloseCase.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="DeveloperFramework\Salesforce\sf_CloseCase.xaml">
-                              <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_ProcedureNumber">[procedureNumber]</InArgument>
-                              </ui:InvokeWorkflowFile.Arguments>
-                            </ui:InvokeWorkflowFile>
+                            <If Condition="[is_TitleDeedGenerated]" DisplayName="If-Is Title Deed Generated" sap:VirtualizedContainerService.HintSize="452,741" sap2010:WorkflowViewState.IdRef="If_4">
+                              <If.Then>
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,405" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="sf_CreateMileStone - Invoke Workflow File (DeveloperFramework\Salesforce\sf_CreateMileStone.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="DeveloperFramework\Salesforce\sf_CreateMileStone.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_ProcedureNumber">[procedureNumber]</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                  </ui:InvokeWorkflowFile>
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="sf_CloseCase - Invoke Workflow File (DeveloperFramework\Salesforce\sf_CloseCase.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="DeveloperFramework\Salesforce\sf_CloseCase.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_ProcedureNumber">[procedureNumber]</InArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                  </ui:InvokeWorkflowFile>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,174" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Throw Exception="[new BusinessRuleException(&quot;Title Deed Not Generated&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                                </Sequence>
+                              </If.Else>
+                            </If>
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,226" sap2010:WorkflowViewState.IdRef="Sequence_7">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Process Not Submitted &quot;+in_TransactionItem(&quot;Case Number&quot;).ToString]" />
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Process Not Submitted &quot;+in_TransactionItem(&quot;Case Number&quot;).ToString]" />
                           </Sequence>
                         </If.Else>
                       </If>
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,453" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="522,453" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:WriteCell Cell="[in_CaseStatusColumnIndex + (in_TransactionNumber + 1).ToString()]" DisplayName="Write Cell Workbook-update pcc not genereated" sap:VirtualizedContainerService.HintSize="452,279" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" Text="PCC Not Generated" WorkbookPath="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Sales_OPS\Title Deed\Input\&quot;+Date.Now.Year.ToString+&quot;\&quot;+Date.Now.ToString(&quot;MMMM&quot;)+&quot;\Report_TitleDeed_&quot;+Date.Now.ToString(&quot;dd-MMM-yyyy&quot;)+&quot;.xlsx&quot;]" />
-                      <Throw Exception="[new BusinessRuleException(&quot;PCC Not Generated&quot;)]" sap:VirtualizedContainerService.HintSize="452,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                      <ui:WriteCell Cell="[in_CaseStatusColumnIndex + (in_TransactionNumber + 1).ToString()]" DisplayName="Write Cell Workbook-update pcc not genereated" sap:VirtualizedContainerService.HintSize="488,279" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" Text="PCC Not Generated" WorkbookPath="[&quot;C:\Users\SalesBot\Desktop\LAPBOT\Sales_OPS\Title Deed\Input\&quot;+Date.Now.Year.ToString+&quot;\&quot;+Date.Now.ToString(&quot;MMMM&quot;)+&quot;\Report_TitleDeed_&quot;+Date.Now.ToString(&quot;dd-MMM-yyyy&quot;)+&quot;.xlsx&quot;]" />
+                      <Throw Exception="[new BusinessRuleException(&quot;PCC Not Generated&quot;)]" sap:VirtualizedContainerService.HintSize="488,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
                     </Sequence>
                   </If.Else>
                 </If>
@@ -317,14 +355,14 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="558,349" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="594,349" sap2010:WorkflowViewState.IdRef="Sequence_9">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="524,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[exception.Message+Environment.NewLine+exception.Source]" />
-              <Throw Exception="[New SystemException(&quot;Failed To Process Case &quot;+in_TransactionItem(&quot;Case Number&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="524,114" sap2010:WorkflowViewState.IdRef="Throw_2" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="560,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[exception.Message+Environment.NewLine+exception.Source]" />
+              <Throw Exception="[New SystemException(&quot;Failed To Process Case &quot;+in_TransactionItem(&quot;Case Number&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="560,114" sap2010:WorkflowViewState.IdRef="Throw_2" />
             </Sequence>
           </ActivityAction>
         </Catch>
@@ -333,19 +371,19 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="ubc:BusinessRulesException" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="558,108" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="594,108" sap2010:WorkflowViewState.IdRef="Sequence_11">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Rethrow sap:VirtualizedContainerService.HintSize="524,48" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="560,48" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
             </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
       <TryCatch.Finally>
-        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="558,25" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="594,25" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
